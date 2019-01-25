@@ -15,6 +15,12 @@ $config = [
     'name'       => 'sw-http',
     'basePath'   => dirname(__DIR__),
     'bootstrap'  => ['log'],
+    'timezone'   => 'PRC',
+    'modules'    => [
+        'v1' => [
+            'class' => app\modules\v1\V1Mod::class
+        ]
+    ],
     'components' => [
         'db'           => $db,
         'redis'        => $redis,
@@ -119,5 +125,4 @@ $config = [
     ],
     'params'     => $params,
 ];
-
 return $config;

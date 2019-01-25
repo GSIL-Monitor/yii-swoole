@@ -40,6 +40,11 @@ class BaseFilter extends Behavior {
     public $except = [];
     
     public function isActive() {
+        $controller = Yii::$app->controller;
+        if(is_null($controller)){
+            return true;
+        }
+
         $action = Yii::$app->controller->action;
         if(is_null($action)){
             return true;
